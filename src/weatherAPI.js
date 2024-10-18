@@ -2,6 +2,7 @@ export class WeatherAPI {
   constructor() {
     this.apiKey = "VXAVKRGFZEPR7TZD8QRKDJBHB";
   }
+
   async getWeather(location) {
     console.log(location);
     try {
@@ -10,11 +11,15 @@ export class WeatherAPI {
         { mode: "cors" }
       );
       const weatherData = await response.json();
-      let weather = weatherData.days[0].temp;
-      console.log(weather);
-      return weather;
+      console.log(weatherData);
+
+      const weatherWeek = weatherData.days.map((day) => day.temp);
+      const dateWeek = weatherData.days.map((day) => day.datetime);
+
+      return { weatherWeek, dateWeek };
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      return { weatherWeek: [], dateWeek: [] }; // Return empty arrays on error
     }
   }
 }
