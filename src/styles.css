@@ -1,4 +1,11 @@
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.days-container {
+  margin: 30px 20px;
+  display: flex;
+  justify-content: space-between;
 }
