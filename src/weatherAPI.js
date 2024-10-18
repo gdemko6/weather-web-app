@@ -10,7 +10,9 @@ export class WeatherAPI {
         { mode: "cors" }
       );
       const weatherData = await response.json();
-      console.log(weatherData);
+      let weather = weatherData.days[0].temp;
+      console.log(weather);
+      return weather;
     } catch (error) {
       console.log(error);
     }

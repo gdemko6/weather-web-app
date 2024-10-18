@@ -5,15 +5,16 @@ import { WeatherType } from "./weatherType";
 
 window.addEventListener("load", initialize());
 
-function initialize() {
+async function initialize() {
+  const view = new View();
   const weatherAPI = new WeatherAPI();
-  let minneapolisWeather = weatherAPI.getWeather("Minneapolis");
-  /*View.displaySearchResults("Minneapolis", minneapolisWeather);
+  let minneapolisWeather = await weatherAPI.getWeather("Minneapolis");
+  view.displaySearchResults("Minneapolis", minneapolisWeather);
 
   const searchButton = document.querySelector("#search-button");
-  searchButton.addEventListener("click", () => {
+  searchButton.addEventListener("click", async () => {
     const search = document.querySelector("#search-input");
-    currentWeather = weatherAPI.getWeather(search.value);
-    View.displaySearchResults(search.value, currentWeather);
-  });*/
+    let currentWeather = await weatherAPI.getWeather(search.value);
+    view.displaySearchResults(search.value, currentWeather);
+  });
 }
