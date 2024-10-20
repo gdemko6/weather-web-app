@@ -7,7 +7,7 @@ export class View {
     // const weatherType = type.getWeatherType(weather);
     // this.changeTheme(weatherType);
 
-    for (let index = 0; index < 7; index++) {
+    for (let index = 0; index < 5; index++) {
       const weatherDayDom = document.querySelector(`#day${index}`);
       weatherDayDom.innerHTML = "";
 
@@ -15,7 +15,7 @@ export class View {
         const temperatureDom = document.createElement("div");
         const dateDom = document.createElement("div");
 
-        temperatureDom.innerText = `Temperature: ${weatherWeek[index]}°C`;
+        temperatureDom.innerText = `Temp: ${weatherWeek[index]}°C`;
         dateDom.innerText = `${dates[index]}`;
 
         weatherDayDom.appendChild(dateDom);

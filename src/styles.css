@@ -4,8 +4,45 @@ body {
   padding: 0;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#location {
+  font-size: 36px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+#search-input {
+  height: 15px;
+  margin-right: 10px;
+}
+
 .days-container {
   margin: 30px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.days-container-bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 250px;
+  height: 275px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0);
+  margin-right: 15px;
+  .title {
+    text-align: center;
+    font-size: 24px;
+  }
 }
