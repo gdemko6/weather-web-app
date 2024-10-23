@@ -19,7 +19,7 @@ export class WeatherAPI {
       return { weatherWeek, dateWeek };
     } catch (error) {
       console.error(error);
-      return { weatherWeek: [], dateWeek: [] }; // Return empty arrays on error
+      return { weatherWeek: [], dateWeek: [] };
     }
   }
 }

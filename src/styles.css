@@ -22,13 +22,15 @@ header {
 }
 
 .days-container {
-  margin: 30px 20px;
+  margin: 50px 20px;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
 .days-container-bottom {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
@@ -44,5 +46,18 @@ header {
   .title {
     text-align: center;
     font-size: 24px;
+  }
+}
+
+.active {
+  animation: 1s make-active 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes make-active {
+  to {
+    width: 260px;
+    height: 290px;
+    border: 1px solid blue;
   }
 }

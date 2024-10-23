@@ -15,7 +15,7 @@ export class View {
         const temperatureDom = document.createElement("div");
         const dateDom = document.createElement("div");
 
-        temperatureDom.innerText = `Temp: ${weatherWeek[index]}°C`;
+        temperatureDom.innerText = weatherWeek[index];
         dateDom.innerText = `${dates[index]}`;
 
         weatherDayDom.appendChild(dateDom);

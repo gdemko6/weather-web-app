@@ -1,3 +1,3 @@
 export class WeatherType {
-  getWeatherType() {}
+  getWeatherType(temperature) {}
 }
