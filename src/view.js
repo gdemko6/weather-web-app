@@ -31,7 +31,10 @@ export class View {
     let weatherType = descriptionArray[0];
     const body = document.querySelector("body");
     body.className = "";
+    let cloudy = document.querySelector("#cloudy");
+    cloudy.classList.add("invisible");
     if (weatherType === "Partially cloudy") {
+      cloudy.classList = "";
       body.classList.add("cloudy");
     } else if (weatherType === "Clear") {
       body.classList.add("clear");
@@ -39,6 +42,8 @@ export class View {
       body.classList.add("snowy");
     } else if (weatherType === "Rain") {
       body.classList.add("rainy");
+    } else if (weatherType === "Overcast") {
+      body.classList.add("overcast");
     }
   }
 }

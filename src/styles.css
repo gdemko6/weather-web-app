@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 header {
@@ -50,6 +51,10 @@ header {
   background-color: rgb(243, 243, 243);
 }
 
+.invisible {
+  display: none;
+}
+
 .active {
   animation: 1s make-active 1;
   animation-fill-mode: forwards;
@@ -65,7 +70,53 @@ header {
   background-color: blue;
 }
 .cloudy {
-  background-color: gray;
+  background-color: rgb(14, 143, 248);
+}
+.overcast {
+  background-color: black;
+}
+#clear {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+#snowy {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+#rainy {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+#cloudy {
+  position: fixed;
+  top: 0px;
+  z-index: -1;
+  animation: 30s move infinite linear;
+
+  :nth-child(1) {
+    height: 200px;
+    width: 300px;
+  }
+  :nth-child(3) {
+    height: 200px;
+    width: 300px;
+  }
+
+  img {
+    padding-top: none;
+    margin-top: none;
+    height: 400px;
+    width: 500px;
+    margin-right: 25px;
+  }
+}
+#overcast {
+  position: fixed;
+  top: 0;
+  z-index: -1;
 }
 
 @keyframes make-active {
@@ -73,5 +124,11 @@ header {
     width: 260px;
     height: 290px;
     border: 1px solid blue;
+  }
+}
+
+@keyframes move {
+  to {
+    transform: translateX(100%);
   }
 }
