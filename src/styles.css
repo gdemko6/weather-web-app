@@ -47,11 +47,25 @@ header {
     text-align: center;
     font-size: 24px;
   }
+  background-color: rgb(243, 243, 243);
 }
 
 .active {
   animation: 1s make-active 1;
   animation-fill-mode: forwards;
+}
+
+.clear {
+  background-color: skyblue;
+}
+.snowy {
+  background-color: darkcyan;
+}
+.rainy {
+  background-color: blue;
+}
+.cloudy {
+  background-color: gray;
 }
 
 @keyframes make-active {

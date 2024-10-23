@@ -1,9 +1,5 @@
-import { WeatherType } from "./weatherType";
-
 export class View {
-  displaySearchResults(location, weatherWeek, dates) {
-    let type = new WeatherType();
-
+  displaySearchResults(location, weatherWeek, dates, descriptions) {
     // const weatherType = type.getWeatherType(weather);
     // this.changeTheme(weatherType);
 
@@ -14,12 +10,15 @@ export class View {
       if (weatherWeek[index] !== undefined && dates[index] !== undefined) {
         const temperatureDom = document.createElement("div");
         const dateDom = document.createElement("div");
+        const descriptionDom = document.createElement("div");
 
         temperatureDom.innerText = weatherWeek[index];
         dateDom.innerText = `${dates[index]}`;
+        descriptionDom.innerText = descriptions[index];
 
         weatherDayDom.appendChild(dateDom);
         weatherDayDom.appendChild(temperatureDom);
+        weatherDayDom.appendChild(descriptionDom);
       }
     }
 
@@ -27,5 +26,19 @@ export class View {
     locationDom.innerText = location;
   }
 
-  changeTheme(weatherType) {}
+  changeTheme(description) {
+    let descriptionArray = description.split(",");
+    let weatherType = descriptionArray[0];
+    const body = document.querySelector("body");
+    body.className = "";
+    if (weatherType === "Partially cloudy") {
+      body.classList.add("cloudy");
+    } else if (weatherType === "Clear") {
+      body.classList.add("clear");
+    } else if (weatherType === "Snow") {
+      body.classList.add("snowy");
+    } else if (weatherType === "Rain") {
+      body.classList.add("rainy");
+    }
+  }
 }

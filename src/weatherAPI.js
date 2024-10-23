@@ -15,11 +15,12 @@ export class WeatherAPI {
 
       const weatherWeek = weatherData.days.map((day) => day.temp);
       const dateWeek = weatherData.days.map((day) => day.datetime);
+      const descriptionWeek = weatherData.days.map((day) => day.conditions);
 
-      return { weatherWeek, dateWeek };
+      return { weatherWeek, dateWeek, descriptionWeek };
     } catch (error) {
       console.error(error);
-      return { weatherWeek: [], dateWeek: [] };
+      return { weatherWeek: [], dateWeek: [], descriptionWeek: [] };
     }
   }
 }
