@@ -1,7 +1,14 @@
 import { getWeatherType } from "./weatherType";
 
 export class View {
-  displaySearchResults(location, temperatures, dates, descriptions) {
+  displaySearchResults(
+    location,
+    temperatures,
+    dates,
+    descriptions,
+    highs,
+    lows
+  ) {
     // const weatherType = type.getWeatherType(weather);
     // this.changeTheme(weatherType);
 
@@ -10,16 +17,22 @@ export class View {
       weatherDayDom.innerHTML = "";
 
       if (temperatures[index] !== undefined && dates[index] !== undefined) {
-        const temperatureDom = document.createElement("div");
         const dateDom = document.createElement("div");
+        const temperatureDom = document.createElement("div");
+        const highDom = document.createElement("div");
+        const lowDom = document.createElement("div");
         const descriptionDom = document.createElement("div");
 
-        temperatureDom.innerText = `Temperature: ${temperatures[index]}`;
         dateDom.innerText = `${dates[index]}`;
+        temperatureDom.innerText = `Temperature: ${temperatures[index]}`;
+        highDom.innerText = `High: ${highs[index]}`;
+        lowDom.innerText = `Low: ${lows[index]}`;
         descriptionDom.innerText = descriptions[index];
 
         weatherDayDom.appendChild(dateDom);
         weatherDayDom.appendChild(temperatureDom);
+        weatherDayDom.appendChild(highDom);
+        weatherDayDom.appendChild(lowDom);
         weatherDayDom.appendChild(descriptionDom);
       }
     }
