@@ -9,10 +9,10 @@ async function initialize() {
   const weatherAPI = new WeatherAPI();
 
   // Fetch initial weather data
-  const { temperatures, dates, descriptions } = await weatherAPI.getWeather(
-    "Minneapolis"
-  ); //minneapolis is default
-  view.displaySearchResults("Minneapolis", temperatures, dates, descriptions);
+  const { temperatures, dates, descriptions, location } =
+    await weatherAPI.getWeather("Minneapolis"); //minneapolis is default
+  console.log(location);
+  view.displaySearchResults(location, temperatures, dates, descriptions);
   view.changeTheme(descriptions[0]);
 
   //initialize ability to click on day of weather
@@ -33,16 +33,10 @@ async function initialize() {
   const searchButton = document.querySelector("#search-button");
   searchButton.addEventListener("click", async () => {
     const searchInput = document.querySelector("#search-input");
-    const { temperatures, dates, descriptions } = await weatherAPI.getWeather(
-      searchInput.value
-    );
+    const { temperatures, dates, descriptions, location } =
+      await weatherAPI.getWeather(searchInput.value);
 
-    view.displaySearchResults(
-      searchInput.value,
-      temperatures,
-      dates,
-      descriptions
-    );
+    view.displaySearchResults(location, temperatures, dates, descriptions);
     searchInput.value = ""; // Clear the input field
   });
 }
