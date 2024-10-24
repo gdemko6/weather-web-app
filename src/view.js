@@ -1,4 +1,5 @@
 import { getWeatherType } from "./weatherType";
+import { formatDate } from "./dates";
 
 export class View {
   displaySearchResults(
@@ -23,11 +24,11 @@ export class View {
         const lowDom = document.createElement("div");
         const descriptionDom = document.createElement("div");
 
-        dateDom.innerText = `${dates[index]}`;
-        temperatureDom.innerText = `Temperature: ${temperatures[index]}`;
-        highDom.innerText = `High: ${highs[index]}`;
-        lowDom.innerText = `Low: ${lows[index]}`;
-        descriptionDom.innerText = descriptions[index];
+        dateDom.innerText = formatDate(dates, index + 1);
+        temperatureDom.innerText = `Temperature: ${temperatures[index + 1]}`;
+        highDom.innerText = `High: ${highs[index + 1]}`;
+        lowDom.innerText = `Low: ${lows[index + 1]}`;
+        descriptionDom.innerText = descriptions[index + 1];
 
         weatherDayDom.appendChild(dateDom);
         weatherDayDom.appendChild(temperatureDom);

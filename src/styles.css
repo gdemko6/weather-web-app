@@ -82,15 +82,18 @@ header {
 
 .clear {
   background-color: skyblue;
+  animation: 50s darken-clear infinite linear;
 }
 .snowy {
   background-color: darkcyan;
 }
 .rainy {
   background-color: rgb(34, 104, 235);
+  animation: 50s darken-rainy infinite linear;
 }
 .cloudy {
   background-color: rgb(14, 143, 248);
+  animation: 50s darken-cloudy infinite linear;
 }
 .overcast {
   background-color: black;
@@ -199,5 +202,23 @@ header {
 @keyframes sun-movement {
   to {
     transform: translateY(100%);
+  }
+}
+
+@keyframes darken-cloudy {
+  to {
+    background-color: rgb(43, 63, 71);
+  }
+}
+
+@keyframes darken-clear {
+  to {
+    background-color: rgb(43, 63, 71);
+  }
+}
+
+@keyframes darken-rainy {
+  to {
+    background-color: rgb(12, 32, 70);
   }
 }
