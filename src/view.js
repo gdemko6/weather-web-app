@@ -1,3 +1,5 @@
+import { getWeatherType } from "./weatherType";
+
 export class View {
   displaySearchResults(location, temperatures, dates, descriptions) {
     // const weatherType = type.getWeatherType(weather);
@@ -27,8 +29,7 @@ export class View {
   }
 
   changeTheme(description) {
-    let descriptionArray = description.split(",");
-    let weatherType = descriptionArray[0];
+    let weatherType = getWeatherType(description);
     const body = document.querySelector("body");
     body.className = "";
     let cloudy = document.querySelector("#cloudy");
