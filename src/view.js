@@ -12,7 +12,7 @@ export class View {
     // const weatherType = type.getWeatherType(weather);
     // this.changeTheme(weatherType);
 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < 6; index++) {
       const weatherDayDom = document.querySelector(`#day${index}`);
       weatherDayDom.innerHTML = "";
 
