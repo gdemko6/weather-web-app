@@ -14,7 +14,7 @@ export class View {
 
         temperatureDom.innerText = `Temperature: ${temperatures[index]}`;
         dateDom.innerText = `${dates[index]}`;
-        descriptionDom.innerText = `Conditions: ${descriptions[index]}`;
+        descriptionDom.innerText = descriptions[index];
 
         weatherDayDom.appendChild(dateDom);
         weatherDayDom.appendChild(temperatureDom);
