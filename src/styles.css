@@ -9,6 +9,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 3px;
 
   div#search-container {
     position: relative;
@@ -53,7 +54,7 @@ header {
 }
 
 .card {
-  opacity: 85%;
+  opacity: 95%;
   width: 250px;
   height: 275px;
   padding: 15px;
@@ -117,7 +118,7 @@ header {
   position: fixed;
   top: 0;
   z-index: -1;
-  animation: 50s move infinite linear;
+  animation: 30s move infinite linear;
   :nth-child(1) {
     height: 100px;
     width: 200px;
@@ -127,24 +128,14 @@ header {
   }
   :nth-child(2) {
     position: fixed;
-    left: 800px;
-    top: 100px;
+    left: 600px;
+    top: 170px;
   }
   :nth-child(3) {
     height: 100px;
     width: 200px;
-    margin-top: 70px;
+    margin-top: 180px;
     margin-right: 35px;
-  }
-  :nth-child(4) {
-    position: fixed;
-    top: 150px;
-    left: -200px;
-  }
-  :nth-child(5) {
-    position: fixed;
-    left: 500px;
-    top: 175px;
   }
 
   img {
@@ -187,9 +178,11 @@ header {
 
 @keyframes make-active {
   to {
+    opacity: 98%;
     width: 260px;
     height: 290px;
-    border: 2px solid black;
+    border: 3px solid rgb(12, 172, 247);
+    background-color: rgb(255, 255, 255);
   }
 }
 
@@ -220,5 +213,27 @@ header {
 @keyframes darken-rainy {
   to {
     background-color: rgb(12, 32, 70);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1000px) {
+  .days-container {
+    flex-direction: column;
+  }
+  .days-container-bottom {
+    flex-direction: column;
+  }
+  .card {
+    width: 80%;
+    height: auto;
+    animation: none;
+  }
+  #clear img {
+    width: 100px;
   }
 }
