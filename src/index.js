@@ -37,6 +37,7 @@ async function initialize() {
       await weatherAPI.getWeather(searchInput.value);
 
     view.displaySearchResults(location, temperatures, dates, descriptions);
+    view.changeTheme(descriptions[0]);
     searchInput.value = ""; // Clear the input field
   });
 }
