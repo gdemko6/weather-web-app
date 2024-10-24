@@ -79,9 +79,10 @@ header {
   background-color: black;
 }
 #clear {
+  animation: 200s sun-movement infinite linear;
   position: fixed;
-  top: 5px;
-  left: 5px;
+  top: -50px;
+
   img {
     height: 300px;
   }
@@ -96,7 +97,7 @@ header {
   position: fixed;
   top: 0;
   z-index: -1;
-  animation: 30s move infinite linear;
+  animation: 50s move infinite linear;
   :nth-child(1) {
     height: 100px;
     width: 200px;
@@ -139,7 +140,7 @@ header {
   position: fixed;
   top: 0px;
   z-index: -1;
-  animation: 30s move infinite linear;
+  animation: 50s move infinite linear;
 
   :nth-child(1) {
     height: 200px;
@@ -175,5 +176,11 @@ header {
 @keyframes move {
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes sun-movement {
+  to {
+    transform: translateY(100%);
   }
 }

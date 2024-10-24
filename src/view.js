@@ -46,6 +46,7 @@ export class View {
       body.classList.add("cloudy");
     } else if (weatherType === "Clear") {
       clear.classList = "";
+      cloudy.classList = "";
       body.classList.add("clear");
     } else if (weatherType === "Snow") {
       snowy.classList = "";
