@@ -9,6 +9,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  div#search-container {
+    position: relative;
+    img {
+      background-color: inherit;
+      height: 25px;
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      cursor: pointer;
+    }
+  }
 }
 
 #location {
@@ -18,8 +30,12 @@ header {
 }
 
 #search-input {
-  height: 15px;
+  border-radius: 20px;
+  width: 300px;
+  height: 30px;
   margin-right: 10px;
+  padding-left: 10px;
+  font-size: 16px;
 }
 
 .days-container {
