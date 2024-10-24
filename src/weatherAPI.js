@@ -13,14 +13,14 @@ export class WeatherAPI {
       const weatherData = await response.json();
       console.log(weatherData);
 
-      const weatherWeek = weatherData.days.map((day) => day.temp);
-      const dateWeek = weatherData.days.map((day) => day.datetime);
-      const descriptionWeek = weatherData.days.map((day) => day.conditions);
+      const temperatures = weatherData.days.map((day) => day.temp);
+      const dates = weatherData.days.map((day) => day.datetime);
+      const descriptions = weatherData.days.map((day) => day.conditions);
 
-      return { weatherWeek, dateWeek, descriptionWeek };
+      return { temperatures, dates, descriptions };
     } catch (error) {
       console.error(error);
-      return { weatherWeek: [], dateWeek: [], descriptionWeek: [] };
+      return { temperatures: [], dates: [], descriptions: [] };
     }
   }
 }

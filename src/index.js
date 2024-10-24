@@ -9,15 +9,11 @@ async function initialize() {
   const weatherAPI = new WeatherAPI();
 
   // Fetch initial weather data
-  const { weatherWeek, dateWeek, descriptionWeek } =
-    await weatherAPI.getWeather("Minneapolis");
-  view.displaySearchResults(
-    "Minneapolis",
-    weatherWeek,
-    dateWeek,
-    descriptionWeek
-  );
-  view.changeTheme(descriptionWeek[0]);
+  const { temperatures, dates, descriptions } = await weatherAPI.getWeather(
+    "Minneapolis"
+  ); //minneapolis is default
+  view.displaySearchResults("Minneapolis", temperatures, dates, descriptions);
+  view.changeTheme(descriptions[0]);
 
   //initialize ability to click on day of weather
   let cards = document.querySelectorAll(".card");
@@ -37,14 +33,15 @@ async function initialize() {
   const searchButton = document.querySelector("#search-button");
   searchButton.addEventListener("click", async () => {
     const searchInput = document.querySelector("#search-input");
-    const { weatherWeek, dateWeek, descriptionWeek } =
-      await weatherAPI.getWeather(searchInput.value);
+    const { temperatures, dates, descriptions } = await weatherAPI.getWeather(
+      searchInput.value
+    );
 
     view.displaySearchResults(
       searchInput.value,
-      weatherWeek,
-      dateWeek,
-      descriptionWeek
+      temperatures,
+      dates,
+      descriptions
     );
     searchInput.value = ""; // Clear the input field
   });
