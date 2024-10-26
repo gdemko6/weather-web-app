@@ -4,11 +4,15 @@ export class WeatherAPI {
   }
 
   async getWeather(location) {
+    if (location === "") {
+      location = "Minneapolis"; //error in search so use default
+    }
     try {
       const response = await fetch(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${this.apiKey}`,
         { mode: "cors" }
       );
+
       const weatherData = await response.json();
       console.log(weatherData);
 
